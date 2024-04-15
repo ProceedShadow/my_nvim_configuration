@@ -43,12 +43,6 @@ local plugins = {
 		"numToStr/Comment.nvim",
 		name = "comment"
 	},
-	
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = '0.1.6',
-      	dependencies = { 'nvim-lua/plenary.nvim' }
-    },
 	{
 		"lewis6991/gitsigns.nvim",
 		name = "gitsigns"
@@ -69,23 +63,92 @@ local plugins = {
         	"nvim-treesitter/nvim-treesitter",
         	"rcarriga/nvim-notify",
         	"nvim-tree/nvim-web-devicons",
-    	}
+    		}
 	},
 	{
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
+        	"williamboman/mason.nvim",
+        	"williamboman/mason-lspconfig.nvim",
+        	"neovim/nvim-lspconfig",
 		"nvimdev/lspsaga.nvim"
 	},
 	{
-    	"nvim-lualine/lualine.nvim",
-    	dependencies = { 'nvim-tree/nvim-web-devicons' }
+    		"nvim-lualine/lualine.nvim",
+    		dependencies = { "nvim-tree/nvim-web-devicons" }
+	},
+	{
+		"tamago324/nlsp-settings.nvim",
+		name = "nlsp_setting"
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		dependencies = { "nvim-tree/nvim-web-devicons"}
+	},
+	{
+		"nvim-tree/nvim-web-devicons"
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		name = "telescope"
+		tag = '0.1.6',
+      		dependencies = { 'nvim-lua/plenary.nvim' }
+    	},
+	{
+  		'akinsho/toggleterm.nvim', 
+		name = "toggleterm" 
+		version = "*"
 	},
 	{ 
 		"folke/tokyonight.nvim", 
 		name = "tokyonight", 
-		priority = 1000 },
+		priority = 1000 
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		"p00f/nvim-ts-rainbow"
+	},
+	{
+  		"folke/trouble.nvim",
+  		branch = "dev", -- IMPORTANT!
+  		keys = {
+    			{
+      				"<leader>xx",
+      				"<cmd>Trouble diagnostics toggle<cr>",
+      				desc = "Diagnostics (Trouble)",
+    			},
+    			{
+      				"<leader>xX",
+      				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      				desc = "Buffer Diagnostics (Trouble)",
+    			},
+			{
+      				"<leader>cs",
+     				"<cmd>Trouble symbols toggle focus=false<cr>",
+      				desc = "Symbols (Trouble)",
+    			},
+    			{
+      				"<leader>cl",
+      				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+      				desc = "LSP Definitions / references / ... (Trouble)",
+    			},
+    			{
+      				"<leader>xL",
+      				"<cmd>Trouble loclist toggle<cr>",
+      				desc = "Location List (Trouble)",
+    			},
+    			{
+      				"<leader>xQ",
+      				"<cmd>Trouble qflist toggle<cr>",
+      				desc = "Quickfix List (Trouble)",
+    			},
+  		}
+	},
+	{
+		"folke/which-key.nvim"
+	},
+	"christoomey/vim-tmux-navigator",
+	"lervag/vimtex",
 }
+
 local opts = {}
 
 require("lazy").setup(plugins, opts)
